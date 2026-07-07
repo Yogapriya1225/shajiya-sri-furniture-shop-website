@@ -1,0 +1,40 @@
+# Render "Infrastructure as Code" blueprint.
+# Push this repo to GitHub, then in Render: New -> Blueprint -> select this repo.
+# Render will read this file and provision the web service automatically.
+#
+# NOTE: Render's own managed database offering is PostgreSQL, not MySQL.
+# Since this project requires MySQL, provision MySQL from an external
+# provider instead (e.g. Railway, PlanetScale, Aiven, or your own MySQL
+# server) and paste its connection string into the DATABASE_URL env var
+# below (in the Render dashboard, not in this file, since it's a secret).
+
+services:
+  - type: web
+    name: shajiya-sri-backend
+    runtime: python
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn run:app --bind 0.0.0.0:$PORT"
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: JWT_ACCESS_TOKEN_EXPIRES_HOURS
+        value: "12"
+      - key: DATABASE_URL
+        sync: false # set manually in the Render dashboard (MySQL connection string)
+      - key: CORS_ORIGINS
+        sync: false # e.g. https://shajiya-sri-furniture.vercel.app
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: UPLOAD_FOLDER
+        value: uploads

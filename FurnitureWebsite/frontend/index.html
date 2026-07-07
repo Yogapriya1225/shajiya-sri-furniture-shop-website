@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Shajiya Sri Furniture Mart | Premium Furniture Store in Salem</title>
+    <meta
+      name="description"
+      content="Premium furniture showroom in Salem offering sofas, beds, wardrobes, dining tables, office furniture, and modern home furnishings."
+    />
+    <meta
+      name="keywords"
+      content="furniture showroom Salem, furniture shop Malagalapuram, Shajiya Sri Furniture Mart, sofa Salem, beds Salem, wardrobes Salem, dining table Salem, office furniture Salem, premium furniture store Salem"
+    />
+    <meta name="author" content="Shajiya Sri Furniture Mart" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.shajiyasrifurniture.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business" />
+    <meta property="og:title" content="Shajiya Sri Furniture Mart | Premium Furniture Store in Salem" />
+    <meta
+      property="og:description"
+      content="Premium furniture showroom in Salem offering sofas, beds, wardrobes, dining tables, office furniture, and modern home furnishings."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://www.shajiyasrifurniture.com/" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Shajiya Sri Furniture Mart" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shajiya Sri Furniture Mart | Premium Furniture Store in Salem" />
+    <meta
+      name="twitter:description"
+      content="Premium furniture showroom in Salem offering sofas, beds, wardrobes, dining tables, office furniture, and modern home furnishings."
+    />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#8A5A32" />
+
+    <!-- Structured Data — LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "Shajiya Sri Furniture Mart",
+        "description": "Premium furniture showroom in Salem offering sofas, beds, wardrobes, dining tables, office furniture, and modern home furnishings.",
+        "url": "https://www.shajiyasrifurniture.com",
+        "telephone": "+917305238752",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "H98H+MVF, Malagalapuram, Mangalapuram",
+          "addressLocality": "Salem",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "636202",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 11.5666815,
+          "longitude": 78.3796817
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "120"
+        },
+        "image": "/og-image.jpg",
+        "priceRange": "₹₹"
+      }
+    </script>
+  </head>
+  <body>
+    <!--
+      Prevents a light/dark "flash of wrong theme" on first paint by
+      applying the saved (or OS-preferred) theme before React mounts.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("shajiya-sri-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.classList.add(theme);
+        } catch (e) {
+          document.documentElement.classList.add("light");
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

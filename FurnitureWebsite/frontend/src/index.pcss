@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- Shajiya Sri Furniture Mart :: Light Theme ---- */
+    --background: 39 42% 96%;        /* Cream White */
+    --foreground: 27 12% 16%;        /* Dark Gray / Ink */
+
+    --card: 40 45% 98%;
+    --card-foreground: 27 12% 16%;
+
+    --popover: 40 45% 98%;
+    --popover-foreground: 27 12% 16%;
+
+    --primary: 27 48% 36%;           /* Warm Brown */
+    --primary-foreground: 40 45% 98%;
+
+    --secondary: 36 38% 88%;         /* Wood Beige */
+    --secondary-foreground: 27 20% 20%;
+
+    --muted: 36 30% 92%;
+    --muted-foreground: 27 10% 40%;
+
+    --accent: 39 51% 55%;            /* Gold */
+    --accent-foreground: 27 30% 15%;
+
+    --destructive: 4 70% 45%;
+    --destructive-foreground: 40 45% 98%;
+
+    --border: 36 25% 85%;
+    --input: 36 25% 85%;
+    --ring: 27 48% 36%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    /* ---- Elegant Charcoal Dark Mode ---- */
+    --background: 24 14% 10%;        /* Charcoal */
+    --foreground: 38 30% 92%;
+
+    --card: 24 14% 13%;
+    --card-foreground: 38 30% 92%;
+
+    --popover: 24 14% 13%;
+    --popover-foreground: 38 30% 92%;
+
+    --primary: 33 42% 62%;           /* Lightened warm brown for contrast */
+    --primary-foreground: 24 20% 12%;
+
+    --secondary: 24 12% 18%;
+    --secondary-foreground: 38 25% 88%;
+
+    --muted: 24 12% 18%;
+    --muted-foreground: 36 15% 65%;
+
+    --accent: 39 55% 58%;            /* Gold pops on charcoal */
+    --accent-foreground: 24 20% 12%;
+
+    --destructive: 4 60% 50%;
+    --destructive-foreground: 38 30% 92%;
+
+    --border: 24 10% 22%;
+    --input: 24 10% 22%;
+    --ring: 39 55% 58%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), serif;
+  }
+}
+
+@layer utilities {
+  /* Signature divider: a dovetail "joinery seam" — a small nod to
+     woodworking joinery used between major sections instead of a
+     generic straight rule. */
+  .joinery-divider {
+    position: relative;
+    height: 1px;
+    background: hsl(var(--border));
+  }
+  .joinery-divider::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    width: 22px;
+    height: 11px;
+    transform: translateX(-50%);
+    background: hsl(var(--accent));
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    opacity: 0.75;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-px {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container-px {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-px {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container-px {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+}
+
+/* ---- Scrollbar hide (outside @layer to avoid specificity issues) ---- */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,13 @@
+# This repo also has dedicated ignores in /frontend/.gitignore and
+# /backend/.gitignore for stack-specific files (node_modules, venv, etc.)
+# This root file only catches general OS / editor / IDE noise.
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
